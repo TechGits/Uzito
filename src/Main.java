@@ -1,11 +1,50 @@
 import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-JFrame frame = new JFrame("Hello World Java Swing");
 
-public class Main {
+public class Main extends JFrame {
+    JButton btn;
+    JLabel lbl;
+    JPanel panel;
+    public Main() {
+        btn = new JButton();
+        lbl = new JLabel();
+        btn.setText("Click Me");
+        setTitle("Hello Main from Swing");
+        panel = new JPanel();
+        btn.setToolTipText("Click The Button");
+        setSize(500, 100);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+
+        panel.add(btn);
+        panel.add(lbl);
+        add(panel);
+
+        btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked.java.awt.event.MouseEvent ae) {
+                btMouseClicked(ae);
+            }
+    });
+}
+private void btMouseClicked(java.awt.event.MouseEvent ae) {
+    lbl.setText("Hello 2nd");
+
+}
+
+        
+        
+
+
+
+
     public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main();
+            }
+    });
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter the Module code: ");
         String ModCode = scanner.next();
