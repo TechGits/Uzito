@@ -27,7 +27,7 @@ public class Main extends JFrame {
                 btMouseClicked(ae);
             }
     });
-}
+} 
 private void btMouseClicked(java.awt.event.MouseEvent ae) {
     lbl.setText("Hello 2nd");
 
